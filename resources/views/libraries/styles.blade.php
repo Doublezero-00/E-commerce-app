@@ -1,5 +1,4 @@
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.bunny.net">
 <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -19,57 +18,65 @@
         width: 200px;
         height: 100vh;
         padding: 5px;
-        background-color:#00A9FF; /* Bootstrap light gray */
-        border-right: 1px solid var(--bs-border-color); /* Bootstrap border */
-        overflow-y: auto; /* enable scroll if content is long */
+        background-color:#00A9FF; 
+        border-right: 1px solid var(--bs-border-color); 
+        overflow-y: auto; 
     }
 
-    /* Main content wrapper */
     .main {
         width: calc(100% - 200px);
-        margin-left: 230px; /* match sidebar width */
+        margin-left: 230px; 
         padding: 1rem;
-
     }
 
-    /* Navbar */
+    .home {
+        width: 100%;
+        margin-left: 230px; 
+        padding: 1rem;
+    }
+
     .navbar {
         position: fixed;
         top: 0;
         width: calc(100% - 200px);
         height: 60px;
-        left: 200px; /*align with sidebar */
+        left: 200px;
         padding: 1rem;
-        background-color: #00A9FF; /* Bootstrap dark */
-        color: var(--bs-light); /* Bootstrap light text */
+        background-color: #00A9FF;
+        color: var(--bs-light); 
         display: flex;
         align-items: center;
         justify-content: space-between;
         z-index: 1000;
     }
 
-    /* Body content */
     .body-content {
-        margin-top: 70px; /* avoid overlap with navbar */
+        margin-top: 70px; 
         min-height: 85vh;
-        background-color: var(--bs-body-bg); /* Bootstrap default body background */
+        background-color: var(--bs-body-bg); 
         padding: 1rem;
     }
 
+    .home-body-content {
+        margin-top: 70px;
+        margin-bottom: 150px;
+        align-items: center;
+    }
+
     .sidebar h3 {
-        color: #000000; /* highlight title */
+        color: #000000;
         font-weight: 600;
     }
 
     .sidebar .nav-link {
-        border-radius: .375rem; /* rounded corners */
+        border-radius: .375rem;
         margin-bottom: .5rem;
         transition: background-color 0.2s ease;
         color: #000000;
     }
 
     .sidebar .nav-link:hover {
-        background-color: #89CFF3; /* hover effect */
+        background-color: #89CFF3;
         color: var(--bs-light);
     }
 
@@ -110,16 +117,26 @@
     }
 
     .product-card {
-        width: 18rem;      /* fixed width */
-        height: 350px;     /* fixed height */
+        width: 18rem;    
+        height: 350px;   
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
 
     .product-card img {
-        height: 200px;     /* fix image height */
-        object-fit: cover; /* crop image nicely */
+        height: 200px;  
+        object-fit: cover; 
+    }
+
+    .Navbar {
+        top: 0;
+        width: 100%;
+        height: 60px;
+        padding: 1rem;
+        background-color: #00A9FF; 
+        color: var(--bs-light); 
+        display: flex;
     }
 
     
