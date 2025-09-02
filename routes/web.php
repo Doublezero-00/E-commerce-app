@@ -6,7 +6,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
+
+Route::get('/admin', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('categories')->name('categories.')->group(function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');

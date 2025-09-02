@@ -29,6 +29,7 @@
                 <p class="card-text flex-grow-1 overflow-hidden text-truncate" style="max-height: 60px;">
                     {{ $product->description }}
                 </p>
+                <p>Quanity: {{ $product->quantity }}</p>
                 <div class="mt-auto">
                     <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">Edit</a>
                     <a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger btn-sm">Delete</a>
