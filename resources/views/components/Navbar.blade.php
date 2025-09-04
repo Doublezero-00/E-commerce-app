@@ -16,10 +16,10 @@
             <a class="nav-link text-white" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Products</a>
+            <a class="nav-link text-white" href="#">Shop All</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">About us</a>
+            <a class="nav-link text-white" href="#">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Contact us</a>
@@ -28,10 +28,10 @@
 
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link text-white">Login</a>
+            <a href="{{route('auth.login')}}" class="nav-link text-white">Login</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link text-white">Register</a>
+            <a href="{{route('auth.register')}}" class="nav-link text-white">Register</a>
           </li>
         </ul>
       </div>
