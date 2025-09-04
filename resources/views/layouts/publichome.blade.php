@@ -11,9 +11,9 @@
     
     @include('components.Navbar')
 
-    <main class="flex-grow-1 home-body-content py-4">
+    <div class="home-body-content">
         @yield('content')
-    </main>
+    </div>
 
     @include('components.main.footer')
 
