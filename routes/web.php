@@ -6,8 +6,16 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublichomeController;
+use App\Http\Controllers\LoginRegisterController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
+
+Route::prefix('auth')->name('auth.')->group(function() {
+    Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
+    Route::post('/store', [LoginRegisterController::class, 'store'])->name('store');
+    Route::get('/login', [LoginRegisterController::class, 'login'])->name('login');
+    Route::post('/loginstore', [LoginRegisterController::class, 'loginstore'])->name('loginstore');
+});
 
 Route::get('/admin', [HomeController::class, 'index'])->name('home');
 
@@ -39,8 +47,6 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::post('/{user}/update', [UserController::class, 'update'])->name('update');
     Route::get('/{user}/delete', [UserController::class, 'delete'])->name('delete');
 });
-
-
 
 Route::middleware([
     'auth:sanctum',
