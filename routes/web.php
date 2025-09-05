@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublichomeController;
 use App\Http\Controllers\LoginRegisterController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
 
@@ -15,6 +16,11 @@ Route::prefix('auth')->name('auth.')->group(function() {
     Route::post('/store', [LoginRegisterController::class, 'store'])->name('store');
     Route::get('/login', [LoginRegisterController::class, 'login'])->name('login');
     Route::post('/loginstore', [LoginRegisterController::class, 'loginstore'])->name('loginstore');
+});
+
+Route::prefix('contact')->name('contact.')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('index');
+    Route::post('/store', [ContactController::class, 'store'])->name('store');
 });
 
 Route::get('/admin', [HomeController::class, 'index'])->name('home');
