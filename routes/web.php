@@ -8,8 +8,19 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublichomeController;
 use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomecategoryController;
+use App\Http\Controllers\DisplayproductsController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
+
+Route::prefix('category')->name('category.')->group(function () {
+    Route::get('/', [HomecategoryController::class, 'index'])->name('index');
+    Route::get('/{category}', [HomecategoryController::class, 'show'])->name('show');
+});
+
+Route::prefix('displayproducts')->group(function () {
+    Route::get('/', [DisplayproductsController::class, 'index'])->name('allproducts');
+});
 
 Route::prefix('auth')->name('auth.')->group(function() {
     Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');

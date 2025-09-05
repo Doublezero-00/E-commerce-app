@@ -16,10 +16,10 @@
             <a class="nav-link text-white" href="{{route('public.home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Shop All</a>
+            <a class="nav-link text-white" href="{{route('allproducts')}}">Shop All</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Categories</a>
+            <a class="nav-link text-white" href="{{route('category.index')}}">Categories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="{{route('contact.index')}}">Contact us</a>
