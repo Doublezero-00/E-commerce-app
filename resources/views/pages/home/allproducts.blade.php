@@ -2,19 +2,19 @@
 
 @section('content')
     <div class="products-grid">
-        @if($products)
-            @foreach($products as $product)
-                <div class="card product-card">
-                    <img class="card-img-top" src="{{ $product->image }}" alt="Product image">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ $product->name }}</h5>
-                        <h3 class="price text-primary">Rs. {{ $product->price }}</h3>
-                        <p class="quantity">Quantity: {{ $product->quantity }}</p>
-                        <a href="#"><button class="btn btn-primary mt-auto">View product</button></a>
-                    </div>
+        @foreach($all_products as $product)
+            <div class="card product-card">
+                <img class="card-img-top" src="{{ $product->image }}" alt="Product image">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <h3 class="price text-primary">Rs. {{ $product->price }}</h3>
+                    <p class="quantity">Quantity: {{ $product->quantity }}</p>
+                    <a href="#">
+                        <button class="btn btn-primary mt-auto w-100">View product</button>
+                    </a>
                 </div>
-            @endforeach
-        @endif
+            </div>
+        @endforeach
     </div>
 
     <style>
@@ -37,6 +37,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            background: #fff;
         }
 
         .product-card:hover {
@@ -46,8 +47,13 @@
 
         .product-card img.card-img-top {
             width: 100%;
-            height: 250px;
+            height: 230px;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img.card-img-top {
+            transform: scale(1.05);
         }
 
         .card-body {
@@ -59,13 +65,13 @@
         .card-title {
             font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .price {
             font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .description {
@@ -73,12 +79,25 @@
             max-height: 60px;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: #555;
         }
 
         .quantity {
             font-weight: 500;
-            color: #555;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .btn-primary {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #084298;
         }
 
         @media (max-width: 768px) {
@@ -86,10 +105,6 @@
                 width: 100%;
                 max-width: 350px;
             }
-        }
-
-        .btn {
-            width: 270px;
         }
     </style>
 @endsection
