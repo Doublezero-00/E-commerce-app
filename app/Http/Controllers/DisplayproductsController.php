@@ -10,4 +10,9 @@ class DisplayproductsController extends Controller
         $all_products = Products::all();
         return view('pages.home.allproducts', compact('all_products'));
     }
+
+    public function view($product_id) {
+        $product = Products::find($product_id);
+        return view('pages.home.viewproducts', compact('product'));
+    }
 }

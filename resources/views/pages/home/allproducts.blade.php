@@ -8,8 +8,7 @@
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <h3 class="price text-primary">Rs. {{ $product->price }}</h3>
-                    <p class="quantity">Quantity: {{ $product->quantity }}</p>
-                    <a href="#">
+                    <a href="{{route('viewproduct', $product->id)}}">
                         <button class="btn btn-primary mt-auto w-100">View product</button>
                     </a>
                 </div>

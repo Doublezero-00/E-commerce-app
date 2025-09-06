@@ -20,6 +20,7 @@ Route::prefix('category')->name('category.')->group(function () {
 
 Route::prefix('displayproducts')->group(function () {
     Route::get('/', [DisplayproductsController::class, 'index'])->name('allproducts');
+    Route::get('/view/{prduct}', [DisplayproductsController::class, 'view'])->name('viewproduct');
 });
 
 Route::prefix('auth')->name('auth.')->group(function() {
