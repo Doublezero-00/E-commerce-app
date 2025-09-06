@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomecategoryController;
 use App\Http\Controllers\DisplayproductsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\MessageController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
 
@@ -70,6 +71,8 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::post('/{user}/update', [UserController::class, 'update'])->name('update');
     Route::get('/{user}/delete', [UserController::class, 'delete'])->name('delete');
 });
+
+Route::get('/messages', [MessageController::class, 'message'])->name('messages');
 
 Route::middleware([
     'auth:sanctum',
