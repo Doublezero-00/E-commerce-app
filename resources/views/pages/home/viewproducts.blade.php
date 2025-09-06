@@ -145,7 +145,9 @@
                 <button onClick="increaseqty()">+</button>
             </div>
 
-            <button>Add to cart</button>
+            <a href="{{route('cart', $product->id)}}">
+                <button>Add to cart</button>
+            </a>
 
             <h4>Item description:</h4>
             <p>{{$product->description}}</p>

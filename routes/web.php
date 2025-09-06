@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomecategoryController;
 use App\Http\Controllers\DisplayproductsController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
 
@@ -22,6 +23,10 @@ Route::prefix('displayproducts')->group(function () {
     Route::get('/', [DisplayproductsController::class, 'index'])->name('allproducts');
     Route::get('/view/{prduct}', [DisplayproductsController::class, 'view'])->name('viewproduct');
 });
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/{id}', [CartController::class, 'display'])->name('cart');
+Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::prefix('auth')->name('auth.')->group(function() {
     Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
