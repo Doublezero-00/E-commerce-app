@@ -43,6 +43,18 @@
                 <label for="image" class="form-label">Image</label>
                 <input type="text" class="form-control" id="image" name="image" value="{{$product->image}}" placeholder="Enter item image url">
             </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Category</label>
+                <select id="inputState" class="form-control" name="category">
+                    <option value="mobile_accessories" {{ $product->category == 'mobile_accessories' ? 'selected' : '' }}>Mobile Phone Accessories</option>
+                    <option value="smartwatches" {{ $product->category == 'smartwatches' ? 'selected' : ''}}>Smartwatches</option>
+                    <option value="earphones" {{ $product->category == 'earphones' ? 'selected' : ''}}>Earphones And Headphones</option>
+                    <option value="powerbanks" {{ $product->category == 'powerbanks' ? 'selected' : ''}}>Power Banks</option>
+                    <option value="smart_devices" {{ $product->category == 'smart_devices' ? 'selected' : ''}}>Smart Devices</option>
+                    <option value="computer_accessories" {{ $product->category == 'computer_accessories' ? 'selected' : ''}}>Computer Accessories</option>
+                    <option value="tools" {{ $product->category == 'tools' ? 'selected' : ''}}>Tools</option>
+                </select>
+            </div>
 
             <button class="btn btn-primary">Update</button>
         </form>

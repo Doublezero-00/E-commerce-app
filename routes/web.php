@@ -5,8 +5,41 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PublichomeController;
+use App\Http\Controllers\LoginRegisterController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomecategoryController;
+use App\Http\Controllers\DisplayproductsController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\MessageController;
 
 Route::get('/', [PublichomeController::class, 'index'])->name('public.home');
+
+Route::prefix('category')->name('category.')->group(function () {
+    Route::get('/', [HomecategoryController::class, 'index'])->name('index');
+    Route::get('/{category}', [HomecategoryController::class, 'show'])->name('show');
+});
+
+Route::prefix('displayproducts')->group(function () {
+    Route::get('/', [DisplayproductsController::class, 'index'])->name('allproducts');
+    Route::get('/view/{prduct}', [DisplayproductsController::class, 'view'])->name('viewproduct');
+});
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/{id}', [CartController::class, 'display'])->name('cart');
+Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+Route::prefix('auth')->name('auth.')->group(function() {
+    Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
+    Route::post('/store', [LoginRegisterController::class, 'store'])->name('store');
+    Route::get('/login', [LoginRegisterController::class, 'login'])->name('login');
+    Route::post('/loginstore', [LoginRegisterController::class, 'loginstore'])->name('loginstore');
+});
+
+Route::prefix('contact')->name('contact.')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('index');
+    Route::post('/store', [ContactController::class, 'store'])->name('store');
+});
 
 Route::get('/admin', [HomeController::class, 'index'])->name('home');
 
@@ -39,7 +72,7 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{user}/delete', [UserController::class, 'delete'])->name('delete');
 });
 
-
+Route::get('/messages', [MessageController::class, 'message'])->name('messages');
 
 Route::middleware([
     'auth:sanctum',

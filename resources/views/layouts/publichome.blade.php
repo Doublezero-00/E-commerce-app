@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Digital Junction')</title>
+
+    @include('libraries.styles')
+</head>
+<body class="d-flex flex-column min-vh-100">
+    
+    @include('components.Navbar')
+
+    <div class="home-body-content">
+        @yield('content')
+    </div>
+
+    @include('components.main.footer')
+
+    @include('libraries.scripts')
+
+</body>
+</html>
